@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emergency System</title>
+            <style>
+        body {
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Georgia serif;
+
+                    }
+          #map-background{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            }
+        .hoax-header {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            background-color:pink;
+            height:100px;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    .speed-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px; 
+      height: 50px; 
+      background-color:olive;
+      border-radius: 50%; 
+      border: 2px solid #555; 
+      font-size: 20px;
+      color: #555; 
+    }
+        .circle {
+            width: 50px;
+            height: 50px;
+            background-color: teal;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }s
+        .circle b {
+            color: white;
+        };
+
+               .message {
+            font-size: 100px;
+            color:black;
+            font-weight: bold;
+            text-align: center;
+            display: none; 
+            margin-bottom: 50px;
+        }       
+        .emergency-btn {
+      position: fixed; 
+      bottom: 20px; 
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 50px 50px;
+      background-color: red;
+      color: white;
+      border: 2px solid #d84315;
+      border-radius: 10px;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .emergency-btn:hover {
+      background-color: #e64a19;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    .emergency-btn:active {
+      background-color: #d84315;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      transform: translateX(-50%) scale(0.95);
+    }
+                   </style>
+</head>
+<body>
+       <iframe  id="map-background" src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d30451.68847820875!2d78.435739!3d17.437633!3m2!1i1024!2i768!4f13.1!2m1!1shospitals%20near%20me%20open%20now!5e0!3m2!1sen!2sin!4v1737874278931!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      
+            <div class="hoax-header">
+            <h2>HOAX</h2>
+            <div class="search">
+        <form>
+         <input type="text" placeholder="Search"> 
+        </form>
+       </div>
+      
+<div style="height:100px;"></div>
+<div class="message" id="message" style="background-color:aqua; border-radius:15px; padding:10px 10px;dispaly:inline-block;">
+      <font  size="5">
+The Ambulance is on the way, Please do not panic! Please have faith in us.</font>
+    </div>
+<div class="container">
+  <div class="circle"><b>KM</b></div>
+    </div>
+    
+    <button class="emergency-btn" onclick="showMessage()">EMERGENCY</button>
+       <script>
+        function showMessage() {
+             const messageEl = document.getElementById('message');
+            messageEl.style.display = 'block';
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+            }, 3000);
+        }
+</script>        
+</body>
+</html>
